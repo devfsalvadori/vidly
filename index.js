@@ -56,11 +56,9 @@ app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use(error);
 
-<<<<<<< HEAD
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 //
-=======
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
@@ -72,4 +70,3 @@ app.listen(PORT, () => {
 //app.listen(port, () => console.log(`Listening on port ${port}...`));
 //
 // Test Git
->>>>>>> gcpdeploy
