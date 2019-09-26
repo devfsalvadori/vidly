@@ -3,6 +3,8 @@ coverage/
 .DS_Store
 .app.yaml
 .gcloudignore
+.env
+
 
 
 
