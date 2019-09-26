@@ -9,5 +9,10 @@
         "initialLimit": 100,
         "initialDays": 1
       }
+    },
+    "Authentication": {
+      "JWT" : {
+        "privateKey": "parappappero"
+      }
     }
   }
