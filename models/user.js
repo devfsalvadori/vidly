@@ -1,4 +1,4 @@
-const config = require('config');
+const { privateKey } = require('../config/config');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const mongoose = require('mongoose');
@@ -29,7 +29,8 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.generateAuthToken = function() {
   //const token = jwt.sign({id: user._id}, config.get('jwtprivatekey'));
   //const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, 'mytestprivatekeyjwt');
-  const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, config.get('Authentication.JWT.privateKey'));
+  //const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, config.get('Authentication.JWT.privateKey'));
+  const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, privateKey);
   return token;
 }
 

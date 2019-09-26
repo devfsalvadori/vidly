@@ -1,4 +1,6 @@
 require('express-async-errors');
+const { port } = require('./config/config');
+const { dataBase} = require('./config/config');
 const winston = ('winston');
 const error = require('./middleware/error')
 const config = require('config');
@@ -42,8 +44,7 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
     };
 
-const uri = 'mongodb+srv://fsalvadori:Pipetto123@cluster0-p8qcb.gcp.mongodb.net/project'
-mongoose.connect(uri, options)
+mongoose.connect(dataBase, options)
     .then(() => console.log('Connected to DB....'))
     .catch(err => console.log('Error connecting to database', err))
 
@@ -58,8 +59,12 @@ app.use('/api/auth', auth);
 app.use(error);
 
 // Start the server
-const PORT = process.env.PORT || 8080;
+const PORT = port || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port: ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
+
+
+
