@@ -12,6 +12,7 @@ const users = require('./routes/users');
 const auth = require('./routes/auth');
 const express = require('express');
 const app = express();
+const dbConfig = config.get('Customer.dbConfig');
 
 //winston.add(winston.transports.File, {filename: 'errorlog.log'});
 
@@ -65,6 +66,9 @@ app.listen(PORT, () => {
   console.log(`App listening on port: ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
+//Test config module
+console.log(dbConfig);
 
 //const port = process.env.PORT || 3000;
 //app.listen(port, () => console.log(`Listening on port ${port}...`));
