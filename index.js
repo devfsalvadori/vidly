@@ -3,7 +3,6 @@ const { port } = require('./config/config');
 const { dataBase} = require('./config/config');
 const winston = ('winston');
 const error = require('./middleware/error')
-const config = require('config');
 const mongoose = require('mongoose');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
@@ -15,6 +14,17 @@ const auth = require('./routes/auth');
 const express = require('express');
 const app = express();
 
+process.on('uncaughtException', ex => {
+  console.log('WE GOT AN UNCAUGHT EXEPTION');
+  winston.log(ex.message, ex);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', ex => {
+  console.log('WE GOT AN UNHANDLED REJECTION');
+  winston.log(ex.message, ex);
+  process.exit(1);
+});
 
 //winston.add(winston.transports.File, {filename: 'errorlog.log'});
 
