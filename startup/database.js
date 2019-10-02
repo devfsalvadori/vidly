@@ -1,6 +1,8 @@
-const winstone = require ('winston');
+const winstone = require('winston');
+const config = require('config');
 const mongoose = require('mongoose');
-const { dataBase} = require('../config/config');
+//const { dataBase } = require('../config/config');
+const dataBase = config.get('MongoDb.dbConfig.uri');
 
 const options = {
     useNewUrlParser: true,

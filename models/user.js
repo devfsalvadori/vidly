@@ -1,4 +1,6 @@
-const { privateKey } = require('../config/config');
+//const { privateKey } = require('../config/config');
+const config = require('config');
+const privateKey = config.get('Authentication.jwt.privateKey');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const mongoose = require('mongoose');

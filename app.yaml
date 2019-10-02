@@ -12,7 +12,7 @@
 # limitations under the License.
 
 env_variables:
-  NODE_ENV: "production"
+  NODE_ENV: "development"
 
 # [START gae_quickstart_yaml]
 runtime: nodejs10
