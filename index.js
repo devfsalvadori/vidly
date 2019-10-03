@@ -10,9 +10,9 @@ require('./startup/config')();
 require('./startup/validation')();
 
 const PORT = port || 8080;
-app.listen(PORT, () => {
-  winstone.info(`App listening on port: ${PORT}`);
-});
+const server = app.listen(PORT, () => { winstone.info(`App listening on port: ${PORT}`)});
+
+module.exports = server;
 
 
 

@@ -21,5 +21,5 @@ const options = {
 
 module.exports = function(){
     mongoose.connect(dataBase, options)
-    .then(() => winstone.info('Connected to DB....'))
+    .then(() => winstone.info(`Connected to DB ${dataBase}`))
 };
